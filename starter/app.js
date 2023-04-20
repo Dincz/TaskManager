@@ -1,15 +1,18 @@
 const express = require('express');
 const app = express();
-// require("./").config();
+const tasks = require('./routes/tasks');
+ require("dotenv").config();
 
-
-const port = process.env.PORT  || 3000
- 
+ app.use(express.json());
+const port = process.env.PORT  
+ //middleware
 
 //Routes
 app.get('/hello', (req, res) =>{
-    res.send('HelloWorld')
+    res.send('Task Manager App')
 })
+
+app.use('/api/v1/tasks',tasks)
 
 
 app.listen(port, () => {
