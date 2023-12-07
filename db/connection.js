@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
+mongoose.set("strictQuery", false);
 // eslint-disable-next-line no-unused-vars
-// const connectionString = "mongodb+srv://dineshndr02:dineshndr02@dineshcluster.lwmgt84.mongodb.net/Task-Manager?retryWrites=true&w=majority";
 
 const connectDB = (url) => mongoose
     .connect(url, {
